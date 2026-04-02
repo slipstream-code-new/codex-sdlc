@@ -200,6 +200,12 @@ Completeness focus:
 
 - List the external input, translation rule, and resulting internal command/event chain.
 
+## Implementation-only invariants
+
+- `<bootstrap or initialization rule that must be tested but is not a business event>`
+- `<open-vs-create, path safety, idempotence, or operator guard that belongs in TDD and shell logic>`
+- `<other non-domain invariant that should be preserved during implementation>`
+
 ## Notes
 
 - Record scope boundaries, deferred workflows, or explicit out-of-scope items.

@@ -26,7 +26,10 @@ Every feature moves through:
    - Review the implementation for domain integrity after the test passes.
 5. **COMMIT**
    - Run the relevant broader checks.
-   - Commit the completed cycle before starting a new RED phase.
+   - Commit the completed cycle immediately before starting a new RED phase.
+   - Treat each completed green slice or accepted finding as its own commit
+     boundary unless the user explicitly asks for a different batching
+     strategy.
    - In this workflow, commit means a local git commit on the trunk path, not opening a PR.
 
 ## Phase boundaries

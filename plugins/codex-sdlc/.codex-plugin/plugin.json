@@ -1,6 +1,6 @@
 {
   "name": "codex-sdlc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Codex-first SDLC workflow for solo-heavy, trunk-based development with local skills and git guardrails.",
   "author": {
     "name": "John Wilger",

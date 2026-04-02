@@ -19,8 +19,15 @@ Use a code-review mindset. Findings come first.
 1. Inspect the diff, not just final files.
 2. Trace the changed behavior to the user-facing or system-facing boundary.
 3. Check that the relevant tests or validation steps exist and were run.
-4. Report findings ordered by severity with file references when possible.
-5. If no findings exist, say so explicitly and mention residual risk or test gaps.
+4. Classify each accepted finding as `event-model gap`, `domain/core gap`, or
+   `shell/CLI gap`.
+5. If a finding is an `event-model gap`, patch the event model first, rerun the
+   model completeness pass, and only then implement the fix.
+6. For stateful CLIs or operator tooling, explicitly inspect open-vs-create
+   behavior, bootstrap/init safety, wrong-path or wrong-store behavior, and
+   lifecycle-state interactions.
+7. Report findings ordered by severity with file references when possible.
+8. If no findings exist, say so explicitly and mention residual risk or test gaps.
 
 ## Biases
 

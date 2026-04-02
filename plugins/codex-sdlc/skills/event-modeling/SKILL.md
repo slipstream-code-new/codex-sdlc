@@ -53,6 +53,11 @@ At minimum, verify:
 - every projection attribute traces back to source events or an explicit
   query-time derivation rule
 - absence states are modeled explicitly rather than implied
+- workflows with replace, renew, reissue, supersede, expire, cancel,
+  deactivate, suspend, reactivate, or reopen semantics get a dedicated
+  lifecycle pass before being called complete
+- at least one Given/When/Then scenario proves that historical records no
+  longer block future commands once the latest active state has ended
 - event contracts do not contain unresolved alternatives
 - command preconditions trace back to prior events, not only to convenient
   read-model language
@@ -81,6 +86,15 @@ At minimum, verify:
 - Internal inspection queries may exist, but they must be labeled as supporting
   surfaces rather than accidental public views.
 
+## Implementation-only invariants
+
+- Record non-business constraints that should not distort the event model but
+  must still be covered in TDD and implementation.
+- Typical examples include bootstrap behavior, open-vs-create behavior, path
+  safety, idempotence expectations, and operator-safety guards.
+- Add these invariants to the workflow artifact explicitly so they become
+  concrete follow-up checks instead of hidden shell assumptions.
+
 ## Codex-specific guidance
 
 - Ask clarifying questions when domain knowledge is missing.
@@ -104,8 +118,11 @@ At minimum, verify:
 - each slice has concrete GWT scenarios in the correct pattern form
 - every application-boundary command and operator-facing view has a concrete
   example
+- lifecycle-changing workflows have a dedicated lifecycle pass and a historical
+  state scenario proving re-entry or future eligibility when applicable
 - every event attribute has an explicit source
 - every projection attribute has a traceable source path
+- implementation-only invariants are captured explicitly for TDD and shell work
 - absent automation or translation patterns are explicitly stated when they do
   not exist
 - no major workflow gap remains unaccounted for
