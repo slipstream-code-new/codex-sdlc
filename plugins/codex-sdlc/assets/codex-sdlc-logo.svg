@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="Codex SDLC logo">
+  <rect width="320" height="120" rx="24" fill="#042F2E"/>
+  <rect x="16" y="16" width="88" height="88" rx="18" fill="#0F766E"/>
+  <path d="M34 40h24v8H42v10h14v8H42v14h16v8H34V40zm33 0h8c10 0 17 6.4 17 20s-7 20-17 20h-8V40zm8 8v24c6 0 9-3.7 9-12s-3-12-9-12z" fill="#F8FAFC"/>
+  <text x="124" y="54" fill="#F8FAFC" font-size="28" font-family="ui-sans-serif, system-ui, sans-serif" font-weight="700">Codex SDLC</text>
+  <text x="124" y="84" fill="#99F6E4" font-size="16" font-family="ui-sans-serif, system-ui, sans-serif">solo-first trunk workflow</text>
+</svg>

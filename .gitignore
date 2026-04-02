@@ -1,0 +1,3 @@
+.codex-sdlc/runtime/
+__pycache__/
+*.pyc

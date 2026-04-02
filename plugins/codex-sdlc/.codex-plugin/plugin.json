@@ -1,0 +1,44 @@
+{
+  "name": "codex-sdlc",
+  "version": "0.1.0",
+  "description": "Codex-first SDLC workflow for solo-heavy, trunk-based development with local skills and git guardrails.",
+  "author": {
+    "name": "John Wilger",
+    "url": "https://github.com/jwilger"
+  },
+  "homepage": "https://github.com/jwilger/codex-sdlc",
+  "repository": "https://github.com/jwilger/codex-sdlc",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "sdlc",
+    "trunk-based-development",
+    "agents-md",
+    "hooks"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "interface": {
+    "displayName": "Codex SDLC",
+    "shortDescription": "Trunk-based local workflow for Codex",
+    "longDescription": "Use Codex with repo-local skills, AGENTS.md routing, lightweight Bash hooks, and a direct-to-trunk workflow that avoids PR-first defaults and force-push habits.",
+    "developerName": "John Wilger",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/jwilger/codex-sdlc",
+    "privacyPolicyURL": "https://github.com/jwilger/codex-sdlc",
+    "termsOfServiceURL": "https://github.com/jwilger/codex-sdlc",
+    "defaultPrompt": [
+      "Bootstrap this repo for Codex-first trunk-based development",
+      "Review my changes before I commit directly to trunk",
+      "Help me ship this safely without opening a PR"
+    ],
+    "brandColor": "#0F766E",
+    "composerIcon": "./assets/codex-sdlc-small.svg",
+    "logo": "./assets/codex-sdlc-logo.svg",
+    "screenshots": []
+  }
+}
