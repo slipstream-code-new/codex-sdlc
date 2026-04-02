@@ -27,6 +27,8 @@ just structural completeness.
      explicitly asks for a different artifact shape.
    - Produce pattern-specific Given/When/Then scenarios with concrete command
      and view examples.
+   - For first-party UI workflows, model the user-visible screens and screen
+     submissions rather than internal HTTP endpoints or transport details.
 
 ## Modeling rules
 
@@ -40,6 +42,9 @@ just structural completeness.
 - Separate operator-facing queries/views from internal inspection queries/views.
 - If a workflow has no standalone automation or translation slice, say so
   explicitly instead of leaving the section implied.
+- When later design-system or designer-agent work depends on the workflow,
+  include the screens because they define the user-visible surfaces that must
+  be designed.
 
 ## Information completeness
 
@@ -83,6 +88,8 @@ At minimum, verify:
   application-facing command.
 - Provide a concrete CLI or equivalent boundary example for every
   operator-facing view/query.
+- For first-party UI flows, the equivalent boundary example is the screen and
+  user action, not an internal `GET` or `POST` endpoint.
 - Internal inspection queries may exist, but they must be labeled as supporting
   surfaces rather than accidental public views.
 
@@ -102,12 +109,18 @@ At minimum, verify:
 - Use this skill before major TDD work when the workflow is not yet well-shaped.
 - After any model edit, revisit the `Information Completeness Check` section
   before claiming the workflow is done.
+- After the final material edit, rerun information completeness explicitly and
+  confirm the rerun result before claiming the workflow is complete.
 
 ## Common failure modes
 
 - stopping at structural completeness instead of information completeness
 - mixing state-change and state-view scenarios in the same slice
 - omitting CLI examples for commands or views
+- modeling first-party UI flows as internal HTTP endpoints instead of screens
+  and screen submissions
+- leaving a modeled command or modeled projection without at least one GWT
+  scenario
 - inventing a fake automation slice for a synchronous flow narrative
 - adding internal debug views without modeling the supporting queries
 
@@ -116,6 +129,8 @@ At minimum, verify:
 - the workflow is mapped clearly enough to decompose into pattern-specific
   slices
 - each slice has concrete GWT scenarios in the correct pattern form
+- every modeled command has at least one concrete GWT scenario
+- every modeled projection has at least one concrete GWT scenario
 - every application-boundary command and operator-facing view has a concrete
   example
 - lifecycle-changing workflows have a dedicated lifecycle pass and a historical
@@ -126,3 +141,5 @@ At minimum, verify:
 - absent automation or translation patterns are explicitly stated when they do
   not exist
 - no major workflow gap remains unaccounted for
+- the final post-edit information-completeness rerun has been performed and any
+  remaining gaps have been resolved
